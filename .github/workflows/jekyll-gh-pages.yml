@@ -51,4 +51,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-        theme: jekyll-theme-Hacker
+    #Theme
+         theme: jekyll-theme-Hacker
