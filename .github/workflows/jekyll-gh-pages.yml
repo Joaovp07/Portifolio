@@ -1,4 +1,4 @@
-title: Joao Vitor                         # Título do site que será exibido na barra lateral abaixo do avatar
+title: Portifolio                        # Título do site que será exibido na barra lateral abaixo do avatar
 
 tagline: A text-focused Jekyll theme.  # O texto que será exibido abaixo do título
 
@@ -29,7 +29,7 @@ links:
     # - https://www.linkedin.com/in/username
 
 # Altere para seu timezone ex: America/Sao_Paulo › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: America/Sao_Paulo
 
 # Escolhe a configuração de cores utilizando as opções:
 #
