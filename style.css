@@ -1,0 +1,119 @@
+:root {
+  --vermelho: #eb0c0c;
+  --bg-claro: #ffffff;
+  --bg-escuro: #121212;
+  --texto-claro: #140101;
+  --texto-escuro: #f5f5f5;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: var(--bg-claro);
+  color: var(--texto-claro);
+}
+
+body.dark {
+  background-color: var(--bg-escuro);
+  color: var(--texto-escuro);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--vermelho);
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#toggle-theme {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+h2 {
+  color: var(--vermelho);
+  margin-top: 2rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.grid span {
+  background: var(--vermelho);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: var(--vermelho);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #222;
+  color: white;
+}
+
+footer a {
+  color: var(--vermelho);
+  text-decoration: none;
+  font-weight: bold;
+}
