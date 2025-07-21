@@ -1,55 +1,42 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+title: Joao Vitor                         # Título do site que será exibido na barra lateral abaixo do avatar
 
+tagline: A text-focused Jekyll theme.  # O texto que será exibido abaixo do título
+
+description: >-                        # Descrição do site usada em SEO e feed
+
+# Coloque o seu site ex: 'https://username.github.io'
 url: 'https://joaovp7.github.io/Portifolio/'
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+author: Joao Vitor Pires                 # Coloque seu nome
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+avatar: /assets/img/sample/avatar.jpg   # Coloque seu avatar, lembrando que é preciso colocar a imagem em /assets/img/caminho. Recomenda-se um avatar de aproximadament 400x400
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+github:
+username: JaoVp7            # Coloque seu usuário do GitHub
 
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+twitter:
+username: twitter_username            # Coloque seu usuário do Twitter
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+social:
+name: your_full_name                  # Coloque seu nome (esta informação irá aparecer no copyright do rodapé)
+email: example@doamin.com             # Coloque seu e-mail
+links:
+    # O primeiro elemento da lista irá ser usado como link para autor no copyright
+    - https://twitter.com/username      # Coloque o link do seu Twitter
+    - https://github.com/username       # Coloque o link do seu GitHub
+    # Descomente e altere os links abaixos se achar necessário
+    # - https://www.facebook.com/username
+    # - https://www.linkedin.com/in/username
 
-    #Theme
-         theme: jekyll-theme-Hacker
+# Altere para seu timezone ex: America/Sao_Paulo › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
+timezone: Asia/Shanghai
+
+# Escolhe a configuração de cores utilizando as opções:
+#
+#     light  - Usar tema claro
+#
+#     dark   - Usar tema escuro
+#
+#     dual   - Usa o padrão do sistema e habilita um botão na barra latera para escolher a configuração de cores
+#
+theme_mode: dual
