@@ -25,20 +25,26 @@ body.dark {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: var(--vermelho);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0 0 20px 20px;
 }
 
 header h1 {
-  margin: 0;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+header img {
+  margin-bottom: 1rem;
 }
 
 nav ul {
@@ -66,6 +72,7 @@ nav a {
 h2 {
   color: var(--vermelho);
   margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 .grid {
@@ -79,6 +86,7 @@ h2 {
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 form {
@@ -107,9 +115,10 @@ button {
 footer {
   text-align: center;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: #222;
   color: white;
+  border-radius: 20px 20px 0 0;
 }
 
 footer a {
@@ -117,3 +126,58 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  header {
+    padding: 1rem 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .grid span {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .grid span {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+/* ...existing code... */
