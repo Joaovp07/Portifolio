@@ -10,16 +10,53 @@
     <style>
         body {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffe5e5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background: linear-gradient(90deg, #eb0c0c 60%, #ff5858 100%);
             color: #fff;
             border-radius: 0 0 32px 32px;
             box-shadow: 0 4px 24px rgba(235,12,12,0.12);
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            z-index: 1051;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffe5e5 !important;
+        }
+        .presentation-text {
+            max-width: 600px;
+            margin: 2rem auto 1rem auto;
+            font-size: 1.15rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 16px rgba(235,12,12,0.08);
         }
         .skills-list {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 1rem;
@@ -35,10 +72,17 @@
             font-weight: 500;
             box-shadow: 0 2px 8px rgba(235,12,12,0.08);
         }
+        main.container {
+            flex: 1 0 auto;
+            margin-top: 0 !important;
+        }
         .card {
             border: none;
             border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(235,12,12,0.08);
             transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            background: #fff;
         }
         .card:hover {
             transform: translateY(-6px) scale(1.03);
@@ -48,9 +92,29 @@
             border-radius: 18px 18px 0 0;
             object-fit: cover;
             height: 180px;
+            width: 100%;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #eb0c0c;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+        .btn-outline-danger {
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline-danger:hover {
+            background: #eb0c0c;
+            color: #fff;
         }
         .modal-content {
             border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(235,12,12,0.12);
         }
         footer {
             background: #fff;
@@ -58,40 +122,125 @@
             border-radius: 32px 32px 0 0;
             box-shadow: 0 -2px 16px rgba(235,12,12,0.08);
             margin-top: 3rem;
+            padding: 2rem 1rem;
+            text-align: center;
         }
         footer a {
             color: #eb0c0c;
             font-weight: 500;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.2s;
         }
-        @media (max-width: 768px) {
+        footer a:hover {
+            color: #ff5858;
+        }
+        @media (max-width: 992px) {
             .card-img-top {
                 height: 140px;
             }
             header {
                 border-radius: 0 0 24px 24px;
+                min-height: 260px;
             }
             footer {
                 border-radius: 24px 24px 0 0;
+                padding: 1.5rem 0.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .skills-list {
+                gap: 0.5rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .card-img-top {
+                height: 110px;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+            .card-text {
+                font-size: 0.95rem;
+            }
+            footer {
+                font-size: 0.95rem;
+            }
+            .navbar-toggler {
+                top: 12px;
+                right: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            .skills-list span {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .card-title {
+                font-size: 0.95rem;
+            }
+            .card-text {
+                font-size: 0.9rem;
+            }
+            footer {
+                font-size: 0.9rem;
+                padding: 1rem 0.2rem;
             }
         }
     </style>
 </head>
 <body>
-   <header class="container text-center d-flex flex-column align-items-center py-5 mb-4">
-        <img src="img/avatar-perfil.png" alt="avatar" class="rounded-circle mb-3 shadow" width="120" height="120">
-        <h1 class="fw-bold mb-1">João Vitor</h1>
-        <p class="lead mb-3">Estudante do ensino médio e Estudante de programação.<br>Confira meus projetos!</p>
-        <h4 class="fs-5 mb-3">Minhas habilidades</h4>
-        <div class="skills-list">
-            <span><i class="bi bi-filetype-html"></i> HTML</span>
-            <span><i class="bi bi-filetype-css"></i> CSS</span>
-            <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-            <span><i class="bi bi-lightbulb"></i> Scratch</span>
+    <header class="mb-4 pb-2 position-relative">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background: transparent;">
+            <div class="container position-relative">
+                <a class="navbar-brand fw-bold" href="#">
+                    <img src="img/avatar-perfil.png" alt="avatar" class="rounded-circle shadow" width="48" height="48">
+                    João Vitor
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menu">
+                    <span class="bi bi-list"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projetos">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habilidades">Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container text-center">
+            <div class="presentation-text mt-3">
+                <h1 class="fw-bold mb-2">Olá, eu sou João Vitor!</h1>
+                <p>
+                    Sou estudante do ensino médio e apaixonado por tecnologia.<br>
+                    Desenvolvo projetos web e jogos, sempre buscando aprender novas ferramentas e linguagens.<br>
+                    Aqui você encontra meus principais trabalhos, habilidades e formas de contato.<br>
+                    Seja bem-vindo ao meu portfólio!
+                </p>
+            </div>
+            <h4 class="fs-5 mb-3" id="habilidades">Minhas habilidades</h4>
+            <div class="skills-list mb-4">
+                <span><i class="bi bi-filetype-html"></i> HTML</span>
+                <span><i class="bi bi-filetype-css"></i> CSS</span>
+                <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span><i class="bi bi-lightbulb"></i> Scratch</span>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <h2 class="mb-4 text-center fw-bold text-danger">Meus projetos</h2>
+        <h2 class="mb-4 text-center fw-bold text-danger" id="projetos">Meus projetos</h2>
         <div class="row g-4">
             <!-- Projeto 1 -->
             <div class="col-12 col-md-4">
