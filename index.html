@@ -29,8 +29,8 @@
             color: #fff;
             font-size: 2rem;
             position: absolute;
-            top: 24px;
-            right: 32px;
+            top: 18px;
+            right: 18px;
             z-index: 1051;
         }
         .navbar-brand {
@@ -48,15 +48,15 @@
         .presentation-text {
             max-width: 600px;
             margin: 2rem auto 1rem auto;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             background: rgba(255,255,255,0.15);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: 0 2px 16px rgba(235,12,12,0.08);
         }
         .skills-list {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 1rem;
@@ -64,12 +64,13 @@
         .skills-list span {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             background: #fff;
             color: #eb0c0c;
             border-radius: 20px;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             font-weight: 500;
+            font-size: 0.98rem;
             box-shadow: 0 2px 8px rgba(235,12,12,0.08);
         }
         main.container {
@@ -91,22 +92,24 @@
         .card-img-top {
             border-radius: 18px 18px 0 0;
             object-fit: cover;
-            height: 180px;
+            height: 140px;
             width: 100%;
         }
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #eb0c0c;
         }
         .card-text {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: #555;
         }
         .btn-outline-danger {
             border-radius: 20px;
             font-weight: 500;
             transition: background 0.2s, color 0.2s;
+            font-size: 0.98rem;
+            padding: 0.4rem 1rem;
         }
         .btn-outline-danger:hover {
             background: #eb0c0c;
@@ -121,74 +124,59 @@
             color: #eb0c0c;
             border-radius: 32px 32px 0 0;
             box-shadow: 0 -2px 16px rgba(235,12,12,0.08);
-            margin-top: 3rem;
-            padding: 2rem 1rem;
+            margin-top: 2rem;
+            padding: 1.2rem 0.5rem;
             text-align: center;
+            font-size: 0.98rem;
         }
         footer a {
             color: #eb0c0c;
             font-weight: 500;
             text-decoration: none;
-            margin: 0 0.5rem;
+            margin: 0 0.3rem;
             transition: color 0.2s;
         }
         footer a:hover {
             color: #ff5858;
         }
-        @media (max-width: 992px) {
-            .card-img-top {
-                height: 140px;
-            }
+        /* Responsividade extra para celular */
+        @media (max-width: 576px) {
             header {
-                border-radius: 0 0 24px 24px;
-                min-height: 260px;
-            }
-            footer {
-                border-radius: 24px 24px 0 0;
-                padding: 1.5rem 0.5rem;
-            }
-        }
-        @media (max-width: 768px) {
-            .skills-list {
-                gap: 0.5rem;
-            }
-            header h1 {
-                font-size: 1.5rem;
-            }
-            .card-img-top {
-                height: 110px;
-            }
-            .card-title {
-                font-size: 1rem;
-            }
-            .card-text {
-                font-size: 0.95rem;
-            }
-            footer {
-                font-size: 0.95rem;
+                min-height: 200px;
+                border-radius: 0 0 18px 18px;
+                padding-bottom: 1rem;
             }
             .navbar-toggler {
-                top: 12px;
-                right: 16px;
+                top: 10px;
+                right: 10px;
+                font-size: 1.7rem;
             }
-        }
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.2rem;
+            .navbar-brand img {
+                width: 36px;
+                height: 36px;
+            }
+            .presentation-text {
+                font-size: 0.98rem;
+                padding: 0.8rem;
+                margin: 1rem auto 0.5rem auto;
             }
             .skills-list span {
-                font-size: 0.9rem;
-                padding: 0.3rem 0.8rem;
+                font-size: 0.92rem;
+                padding: 0.3rem 0.6rem;
+            }
+            .card-img-top {
+                height: 90px;
             }
             .card-title {
                 font-size: 0.95rem;
             }
             .card-text {
-                font-size: 0.9rem;
+                font-size: 0.92rem;
             }
             footer {
                 font-size: 0.9rem;
-                padding: 1rem 0.2rem;
+                padding: 0.7rem 0.2rem;
+                border-radius: 16px 16px 0 0;
             }
         }
     </style>
