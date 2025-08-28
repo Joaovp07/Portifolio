@@ -179,6 +179,39 @@
                 border-radius: 16px 16px 0 0;
             }
         }
+        .contact-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #eb0c0c;
+            color: #fff;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(235,12,12,0.18);
+            font-size: 2rem;
+            z-index: 2000;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+        .contact-float:hover {
+            background: #fff;
+            color: #eb0c0c;
+            transform: scale(1.08);
+            text-decoration: none;
+        }
+        @media (max-width: 576px) {
+            .contact-float {
+                width: 44px;
+                height: 44px;
+                font-size: 1.4rem;
+                bottom: 14px;
+                right: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -350,6 +383,12 @@
         </div>
         <p class="mt-3 text-muted small">© 2025 João Vitor</p>
     </footer>
+
+    <a href="https://wa.me/5511988188785" 
+       class="contact-float" 
+       title="Fale comigo no WhatsApp" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
