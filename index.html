@@ -1,327 +1,258 @@
+<!-- DOCTYPE: Informa ao navegador que este é um arquivo HTML5 (versão moderna do HTML) -->
 <!DOCTYPE html>
+<!-- tag <html>: Raiz do documento. O atributo 'lang="pt-br"' informa que o conteúdo está em português brasileiro -->
 <html lang="pt-br">
+<!-- tag <head>: Aqui ficam as informações sobre a página (não aparecem na tela, são instruções para o navegador) -->
 <head>
+    <!-- <meta charset="UTF-8">: Define a codificação de caracteres para aceitar acentos, emojis, etc. -->
     <meta charset="UTF-8">
+    <!-- <meta name="viewport">: Faz a página se adaptar a diferentes tamanhos de tela (celular, tablet, computador) -->
+    <!-- content="width=device-width" garante que o tamanho se ajuste à largura do dispositivo -->
+    <!-- initial-scale=1.0 garante que a página comece com o zoom em 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link>: Conecta arquivos externos à página. Aqui estamos linkando o CSS do Bootstrap -->
+    <!-- Bootstrap: biblioteca de CSS que oferece estilos prontos (cores, botões, grid, etc.) para criar layouts bonitos -->
+    <!-- href: caminho do arquivo (neste caso, um link externo que baixa o Bootstrap da internet) -->
+    <!-- rel="stylesheet": informa que estamos linkando um arquivo CSS (folha de estilos) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons: biblioteca com ícones prontos (GitHub, envelope, WhatsApp, etc.) para usar na página -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Aqui linkamos nosso arquivo CSS personalizado (style.css) onde criamos estilos únicos para o portfólio -->
     <link rel="stylesheet" href="style.css">
+
     <title>João Vitor | Portfólio</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffe5e5 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background: linear-gradient(90deg, #eb0c0c 60%, #ff5858 100%);
-            color: #fff;
-            border-radius: 0 0 32px 32px;
-            box-shadow: 0 4px 24px rgba(235,12,12,0.12);
-            min-height: 340px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .navbar-toggler {
-            border: none;
-            color: #fff;
-            font-size: 2rem;
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            z-index: 1051;
-        }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .navbar-nav .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #ffe5e5 !important;
-        }
-        .presentation-text {
-            max-width: 600px;
-            margin: 2rem auto 1rem auto;
-            font-size: 1.1rem;
-            background: rgba(255,255,255,0.15);
-            border-radius: 16px;
-            padding: 1.2rem;
-            box-shadow: 0 2px 16px rgba(235,12,12,0.08);
-        }
-        .skills-list {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-        .skills-list span {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: #fff;
-            color: #eb0c0c;
-            border-radius: 20px;
-            padding: 0.4rem 0.9rem;
-            font-weight: 500;
-            font-size: 0.98rem;
-            box-shadow: 0 2px 8px rgba(235,12,12,0.08);
-        }
-        main.container {
-            flex: 1 0 auto;
-            margin-top: 0 !important;
-        }
-        .card {
-            border: none;
-            border-radius: 18px;
-            box-shadow: 0 2px 16px rgba(235,12,12,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            overflow: hidden;
-            background: #fff;
-        }
-        .card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 8px 32px rgba(235,12,12,0.15);
-        }
-        .card-img-top {
-            border-radius: 18px 18px 0 0;
-            object-fit: cover;
-            height: 140px;
-            width: 100%;
-        }
-        .card-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #eb0c0c;
-        }
-        .card-text {
-            font-size: 0.98rem;
-            color: #555;
-        }
-        .btn-outline-danger {
-            border-radius: 20px;
-            font-weight: 500;
-            transition: background 0.2s, color 0.2s;
-            font-size: 0.98rem;
-            padding: 0.4rem 1rem;
-        }
-        .btn-outline-danger:hover {
-            background: #eb0c0c;
-            color: #fff;
-        }
-        .modal-content {
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(235,12,12,0.12);
-        }
-        footer {
-            background: #fff;
-            color: #eb0c0c;
-            border-radius: 32px 32px 0 0;
-            box-shadow: 0 -2px 16px rgba(235,12,12,0.08);
-            margin-top: 2rem;
-            padding: 1.2rem 0.5rem;
-            text-align: center;
-            font-size: 0.98rem;
-        }
-        footer a {
-            color: #eb0c0c;
-            font-weight: 500;
-            text-decoration: none;
-            margin: 0 0.3rem;
-            transition: color 0.2s;
-        }
-        footer a:hover {
-            color: #ff5858;
-        }
-        /* Responsividade extra para celular */
-        @media (max-width: 576px) {
-            header {
-                min-height: 200px;
-                border-radius: 0 0 18px 18px;
-                padding-bottom: 1rem;
-            }
-            .navbar-toggler {
-                top: 10px;
-                right: 10px;
-                font-size: 1.7rem;
-            }
-            .navbar-brand img {
-                width: 36px;
-                height: 36px;
-            }
-            .presentation-text {
-                font-size: 0.98rem;
-                padding: 0.8rem;
-                margin: 1rem auto 0.5rem auto;
-            }
-            .skills-list span {
-                font-size: 0.92rem;
-                padding: 0.3rem 0.6rem;
-            }
-            .card-img-top {
-                height: 90px;
-            }
-            .card-title {
-                font-size: 0.95rem;
-            }
-            .card-text {
-                font-size: 0.92rem;
-            }
-            footer {
-                font-size: 0.9rem;
-                padding: 0.7rem 0.2rem;
-                border-radius: 16px 16px 0 0;
-            }
-        }
-        .contact-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: #eb0c0c;
-            color: #fff;
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(235,12,12,0.18);
-            font-size: 2rem;
-            z-index: 2000;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-            text-decoration: none;
-        }
-        .contact-float:hover {
-            background: #fff;
-            color: #eb0c0c;
-            transform: scale(1.08);
-            text-decoration: none;
-        }
-        @media (max-width: 576px) {
-            .contact-float {
-                width: 44px;
-                height: 44px;
-                font-size: 1.4rem;
-                bottom: 14px;
-                right: 14px;
-            }
-        }
-    </style>
 </head>
+
+<!-- tag <body>: Aqui dentro fica TODO o conteúdo visível que o usuário vê na página (textos, botões, imagens, etc.) -->
 <body>
-    <header class="mb-4 pb-2 position-relative">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background: transparent;">
-            <div class="container position-relative">
-                <a class="navbar-brand fw-bold" href="#">
-                    <img src="img/avatar-perfil.png" alt="avatar" class="rounded-circle shadow" width="48" height="48">
+
+    <!-- ===== HEADER / CABEÇALHO ===== -->
+    <!-- tag <header>: Seção do topo da página. Contém: -->
+    <!--   1. Navbar (barra de navegação com menu) -->
+    <!--   2. Apresentação principal (foto, título, descrição) -->
+    <!--   3. Habilidades (HTML, CSS, JavaScript, etc.) -->
+    <header>
+
+        <!-- <nav>: Seção de navegação. É a barra do topo que contém o menu com links -->
+        <!-- class=\"navbar navbar-expand-lg navbar-dark\": Classes do Bootstrap que estilizam a navbar -->
+        <!--   - navbar: aplica estilos básicos de navegação -->
+        <!--   - navbar-expand-lg: faz o menu expandir em telas grandes e virar um hambúrguer em celulares -->
+        <!--   - navbar-dark: deixa o menu com tema escuro (texto claro em fundo escuro) -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <!-- <div class=\"container\">: Container do Bootstrap - centraliza e limita a largura do conteúdo -->
+            <div class="container">
+
+                <!-- <a> (âncora): Link. Clicar aqui volta para o topo da página (href=\"#\") -->
+                <!-- class=\"navbar-brand\": Classe Bootstrap que estiliza este link como a marca/logo da navbar -->
+                <a class="navbar-brand" href="#">
+                    <!-- <img>: Insere uma imagem. src=\"...\" indica o caminho da imagem, alt=\"...\" é o texto se a imagem não carregar -->
+                    <img src="img/avatar-perfil.png" alt="Foto de perfil" class="avatar-nav">
+                    <!-- Texto que aparece ao lado da foto -->
                     João Vitor
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menu">
+
+                <!-- <button>: Botão que aparece APENAS em celulares (telas pequenas) -->
+                <!-- type=\"button\": Define que este é um botão (sem enviar formulário) -->
+                <!-- data-bs-toggle=\"collapse\" e data-bs-target=\"#menuNav\": Atributos do Bootstrap que fazem o menu aparecer/desaparecer ao clicar -->
+                <!-- aria-label=\"Abrir menu\": Texto acessível para leitores de tela (ajuda pessoas com deficiência visual) -->
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuNav"
+                    aria-label="Abrir menu">
+                    <!-- <span>: Elemento para texto. class=\"bi bi-list\": Ícone de três linhas (hambúrguer) da biblioteca Bootstrap Icons -->
                     <span class="bi bi-list"></span>
                 </button>
+
+                <!-- <div>: Divisão/seção do documento. Este div contém os links do menu -->
+                <!-- id=\"menuNav\": Identificador único deste div (usado para referência no JavaScript e CSS) -->
+                <!-- class=\"collapse navbar-collapse\": Classes Bootstrap que controlam se o menu fica visível ou escondido -->
+                <!-- justify-content-end: Alinha os itens do menu para a direita -->
                 <div class="collapse navbar-collapse justify-content-end" id="menuNav">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <!-- <ul>: Lista não-ordenada (sem números). Aqui criamos a lista de itens do menu -->
+                    <!-- class=\"navbar-nav gap-2\": Classe Bootstrap que estiliza a lista como menu da navbar, gap-2 cria espaço entre itens -->
+                    <ul class="navbar-nav gap-2">
+                        <!-- <li>: Item de lista. Cada <li> é um item do menu -->
                         <li class="nav-item">
+                            <!-- <a href=\"#projetos\">: Link que leva para a seção com id=\"projetos\" -->
                             <a class="nav-link" href="#projetos">Projetos</a>
                         </li>
                         <li class="nav-item">
+                            <!-- Outro link do menu -->
                             <a class="nav-link" href="#habilidades">Habilidades</a>
                         </li>
                         <li class="nav-item">
+                            <!-- Terceiro link do menu -->
                             <a class="nav-link" href="#contato">Contato</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container text-center">
-            <div class="presentation-text mt-3">
-                <h1 class="fw-bold mb-2">Olá, eu sou João Vitor!</h1>
-                <p>
-                    Sou estudante do ensino médio e apaixonado por tecnologia.<br>
-                    Desenvolvo projetos web e jogos, sempre buscando aprender novas ferramentas e linguagens.<br>
-                    Aqui você encontra meus principais trabalhos, habilidades e formas de contato.<br>
-                    Seja bem-vindo ao meu portfólio!
-                </p>
-            </div>
-            <h4 class="fs-5 mb-3" id="habilidades">Minhas habilidades</h4>
-            <div class="skills-list mb-4">
+
+        <!-- Seção HERO: É a seção principal que aparece quando se abre o site (foto grande, título principal, botão) -->
+        <!-- <div> com id/class para agrupar e aplicar estilos -->
+        <!-- class=\"text-center\": Centraliza todo o texto horizontalmente -->
+        <!-- class=\"hero-section\": Nossa classe personalizada (definida no CSS) que estiliza esta seção -->
+        <div class="container text-center hero-section">
+            <!-- Foto de perfil grande (110x110px) definida no CSS -->
+            <!-- src=\"img/...\": Caminho para a imagem da pasta 'img' -->
+            <!-- alt=\"João Vitor\": Texto alternativo que aparece se a imagem não carregar ou para leitores de tela -->
+            <img src="img/avatar-perfil.png" alt="João Vitor" class="avatar-hero">
+
+            <!-- <h1>: Heading 1 - maior nível de título. Deve haver apenas UM por página (regra de SEO) -->
+            <!-- <span>: Elemento pequeno para agrupar texto e aplicar estilos. Aqui deixamos \"João Vitor!\" em vermelho -->
+            <h1 class="hero-title">Olá, eu sou <span class="destaque">João Vitor!</span></h1>
+
+            <!-- <p>: Parágrafo - para blocos de texto -->
+            <p class="hero-desc">
+                Estudante do ensino médio apaixonado por tecnologia.<br>
+                Desenvolvo projetos web e jogos, sempre aprendendo algo novo.
+            </p>
+
+            <!-- Botão estilizado. Tecnicamente é um <a> (link) que parece um botão -->
+            <!-- href=\"#projetos\": Ao clicar, o script.js faz a página deslizar até a seção de projetos -->
+            <a href="#projetos" class="btn-vermelho">Ver meus projetos</a>
+        </div>
+
+        <!-- Seção de habilidades (HTML, CSS, JavaScript, Scratch) -->
+        <!-- id=\"habilidades\": Identificador que permite links diretos (href=\"#habilidades\") -->
+        <div class="container text-center" id="habilidades">
+            <!-- <h4>: Heading 4 - subtítulo menor -->
+            <h4 class="secao-titulo-pequeno">Minhas habilidades</h4>
+            
+            <!-- Cada <span> dentro é uma habilidade (HTML, CSS, JavaScript, Scratch) -->
+            <!-- Dica: Para adicionar mais habilidades, copie um <span> e altere o ícone e nome -->
+            <div class="skills-list">
+                <!-- <span> + <i>: Cada habilidade é um span com um ícone (<i>) e texto -->
+                <!-- class=\"bi bi-filetype-html\": Ícone HTML da biblioteca Bootstrap Icons -->
                 <span><i class="bi bi-filetype-html"></i> HTML</span>
                 <span><i class="bi bi-filetype-css"></i> CSS</span>
                 <span><i class="bi bi-filetype-js"></i> JavaScript</span>
                 <span><i class="bi bi-lightbulb"></i> Scratch</span>
             </div>
         </div>
+
     </header>
+    <!-- ===== FIM DO HEADER ===== -->
 
-    <main class="container">
-        <h2 class="mb-4 text-center fw-bold text-danger" id="projetos">Meus projetos</h2>
+
+    <!-- ===== SEÇÃO DE PROJETOS ===== -->
+    <!-- <main>: Seção principal de conteúdo da página. O navegador sabe que o mais importante está aqui -->
+    <!-- id=\"projetos\": Permite que o menu navegue até aqui com #projetos -->
+    <main class="container" id="projetos">
+
+        <h2 class="secao-titulo">Meus Projetos</h2>
+
+        <!-- <div class=\"row\">: Linha do grid (grid = sistema de grades do Bootstrap) -->
+        <!-- class=\"g-4\": Espaçamento (gap) entre os cards -->
+        <!-- Sistema do Bootstrap usa 12 colunas. Podemos dividir assim: -->
+        <!--   - col-12: Ocupa todas as 12 colunas (100% da largura) em celulares -->
+        <!--   - col-md-4: Ocupa 4 colunas (33%) em telas médias e maiores (MD = Medium) -->
+        <!--   Resultado: 3 cards lado a lado no computador, um embaixo do outro no celular -->
         <div class="row g-4">
-            <!-- Projeto 1 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/projeto-1.png" class="card-img-top img-fluid" alt="Imagem do projeto de jogo">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Meus jogos</h5>
-                        <p class="card-text text-muted mb-3">Jogos desenvolvidos para web e Scratch.</p>
-                        <button type="button" class="btn btn-outline-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal1">
-                            <i class="bi bi-eye"></i> Veja o projeto
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Projeto 2 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/projeto-2.png" class="card-img-top img-fluid" alt="Imagem do projeto 2">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Projeto em desenvolvimento</h5>
-                        <p class="card-text text-muted mb-3">Novas ideias e funcionalidades em breve.</p>
-                        <button type="button" class="btn btn-outline-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal2">
-                            <i class="bi bi-eye"></i> Veja o projeto
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Projeto 3 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/projeto-3.png" class="card-img-top img-fluid" alt="Imagem do projeto de futebol">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Explorando o Futebol</h5>
-                        <p class="card-text text-muted mb-3">Projeto interativo sobre futebol e estatísticas.</p>
-                        <button type="button" class="btn btn-outline-danger mt-auto" data-bs-toggle="modal" data-bs-target="#modal3">
-                            <i class="bi bi-eye"></i> Veja o projeto
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- Modal 1 -->
-    <div class="modal fade" id="modal1" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Meus jogos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <!-- CARD DO PROJETO 1: Cada projeto é um card (\"cartão\") -->
+            <!-- <div class=\"col-12 col-md-4\">: Coluna que ocupa 12 colunas (celular) ou 4 (computador) -->
+            <!-- <div class=\"card h-100\">: Card do Bootstrap. h-100 = 100% da altura (fica do mesmo tamanho que os outros) -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <!-- <img class=\"card-img-top\">: Imagem que fica no topo do card -->
+                    <img src="img/projeto-1.png" class="card-img-top" alt="Projeto de jogo">
+                    
+                    <!-- <div class=\"card-body\">: Corpo do card (onde fica o texto) -->
+                    <!-- d-flex flex-column: Classes Bootstrap que fazem o conteúdo ser vertical (flex) -->
+                    <div class="card-body d-flex flex-column">
+                        <!-- Título do projeto -->
+                        <h5 class="card-title">Meus Jogos</h5>
+                        <!-- Descrição -->
+                        <p class="card-text">Jogos desenvolvidos para web e Scratch.</p>
+                        
+                        <!-- Botão que abre um modal (janela popup) com mais detalhes -->
+                        <!-- data-bs-toggle=\"modal\": Atributo Bootstrap que ativa a abertura de modal -->
+                        <!-- data-bs-target=\"#modal1\": Especifica qual modal abrir (o com id=\"modal1\") -->
+                        <!-- mt-auto: Margem automática em cima que empurra o botão para o final do card -->
+                        <button class="btn-card mt-auto" data-bs-toggle="modal" data-bs-target="#modal1">
+                            <i class="bi bi-eye"></i> Ver projeto
+                        </button>
+                    </div>
                 </div>
+            </div>
+
+            <!-- CARD PROJETO 2 -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <img src="img/projeto-2.png" class="card-img-top" alt="Projeto em desenvolvimento">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Projeto em Desenvolvimento</h5>
+                        <p class="card-text">Novas ideias e funcionalidades em breve.</p>
+                        <button class="btn-card mt-auto" data-bs-toggle="modal" data-bs-target="#modal2">
+                            <i class="bi bi-eye"></i> Ver projeto
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD PROJETO 3 -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100">
+                    <img src="img/projeto-3.png" class="card-img-top" alt="Projeto futebol">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Explorando o Futebol</h5>
+                        <p class="card-text">Projeto interativo sobre futebol e estatísticas.</p>
+                        <button class="btn-card mt-auto" data-bs-toggle="modal" data-bs-target="#modal3">
+                            <i class="bi bi-eye"></i> Ver projeto
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- fim .row -->
+
+    </main>
+    <!-- ===== FIM DOS PROJETOS ===== -->
+
+
+    <!-- ===== SEÇÃO DE MODAIS ===== -->
+    <!-- Modal = Janela/popup que aparece sobre a página quando o usuário clica em \"Ver projeto\" -->
+    <!-- Fica escondido até o usuário clicar no botão que referencia este modal -->
+
+    <!-- MODAL 1 - Detalhes do projeto \"Meus Jogos\" -->
+    <!-- <div class=\"modal fade\">: Container do modal. fade = efeito de transição suave ao aparecer -->
+    <!-- id=\"modal1\": Identificador - deve combinar com data-bs-target=\"#modal1\" do botão -->
+    <!-- tabindex=\"-1\": Atributo de acessibilidade para navegação por teclado -->
+    <div class="modal fade" id="modal1" tabindex="-1">
+        <!-- <div class=\"modal-dialog modal-dialog-centered\">: Div que centraliza o modal na tela -->
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- <div class=\"modal-content\">: Conteúdo dentro do modal -->
+            <div class="modal-content">
+                <!-- Cabeçalho do modal (topo com título e botão X) -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Meus Jogos</h5>
+                    <!-- Botão X (fechar) no canto superior direito -->
+                    <!-- data-bs-dismiss=\"modal\": Atributo que fecha o modal quando clicado -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Corpo do modal (conteúdo principal) -->
                 <div class="modal-body">
+                    <!-- Imagem do projeto maior para mais detalhes -->
+                    <!-- img-fluid: A imagem se adapta ao tamanho da tela -->
+                    <!-- w-100: Largura 100% do container -->
+                    <!-- mb-3: Margem inferior (espaço embaixo da imagem) -->
                     <img src="img/projeto-1.png" class="img-fluid w-100 mb-3" alt="Jogo criado por João Vitor">
                     <p>Jogos criados para web e Scratch. Clique abaixo para ver mais detalhes.</p>
                 </div>
-                <div class="modal-footer flex-wrap">
-                    <a class="btn btn-danger mb-2 mb-md-0" href="https://joaovp07.github.io/Jogo-Mario-V1/" target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i> Ver projeto ao vivo
+                <!-- Rodapé do modal com botões de ação -->
+                <div class="modal-footer">
+                    <!-- Botão \"Ver ao vivo\" que abre o projeto em uma nova aba -->
+                    <!-- target=\"_blank\": Abre o link em uma nova aba do navegador (não sai da página) -->
+                    <a class="btn-vermelho" href="https://joaovp07.github.io/Jogo-Mario-V1/" target="_blank">
+                        <i class="bi bi-box-arrow-up-right"></i> Ver ao vivo
                     </a>
-                    <a class="btn btn-outline-dark" href="https://github.com/Joaovp07/Jogo-Mario-V1.git" target="_blank">
+                    <a class="btn-contorno" href="https://github.com/Joaovp07/Jogo-Mario-V1.git" target="_blank">
                         <i class="bi bi-github"></i> Ver código
                     </a>
                 </div>
@@ -329,67 +260,89 @@
         </div>
     </div>
 
-    <!-- Modal 2 -->
+    <!-- MODAL 2 - Projeto em desenvolvimento -->
     <div class="modal fade" id="modal2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Projeto 2</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <img src="img/projeto-2.png" class="img-fluid w-100 mb-3" alt="Projeto 2">
                     <p>Em breve mais informações sobre este projeto.</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-outline-dark" href="#">
-                        <i class="bi bi-box-arrow-up-right"></i> Ver projeto ao vivo
+                    <a class="btn-contorno" href="#">
+                        <i class="bi bi-box-arrow-up-right"></i> Ver ao vivo
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal 3 -->
+    <!-- MODAL 3 - Futebol -->
     <div class="modal fade" id="modal3" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Explorando o Futebol</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <img src="img/projeto-3.png" class="img-fluid w-100 mb-3" alt="Explorando o Futebol">
                     <p>Projeto interativo sobre futebol, estatísticas e curiosidades.</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-outline-dark" href="#">
-                        <i class="bi bi-box-arrow-up-right"></i> Ver projeto ao vivo
+                    <a class="btn-contorno" href="#">
+                        <i class="bi bi-box-arrow-up-right"></i> Ver ao vivo
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ===== FIM DOS MODAIS ===== -->
 
-    <footer class="container py-4 text-center mt-5">
-        <h2 class="fs-5 fw-bold mb-3">Entre em contato</h2>
-        <div class="mb-2">
-            <a href="https://github.com/Joaovp07" target="_blank" class="me-2">
-                <i class="bi bi-github fs-4"></i>
+
+    <!-- ===== SEÇÃO DE RODAPÉ / FOOTER ===== -->
+    <!-- <footer>: Seção final da página. Contém informações de contato, redes sociais e copyright -->
+    <!-- id=\"contato\": Permite que o menu navegue até a seção de contato -->
+    <footer id="contato">
+        <h2 class="footer-titulo">Entre em Contato</h2>
+        <p class="footer-desc">Quer trabalhar junto ou tem alguma ideia? Fale comigo!</p>
+
+        <!-- Grupo de links para redes sociais -->
+        <div class="footer-links">
+            <!-- Link do GitHub que abre em nova aba -->
+            <!-- title=\"GitHub\": Texto que aparece ao passar o mouse sobre o ícone -->
+            <a href="https://github.com/Joaovp07" target="_blank" title="GitHub">
+                <i class="bi bi-github"></i>
             </a>
-            <a href="mailto:devjoaovp@gmail.com" class="me-2">
-                <i class="bi bi-envelope fs-4"></i>
+            <a href="mailto:devjoaovp@gmail.com" title="E-mail">
+                <i class="bi bi-envelope"></i>
             </a>
         </div>
-        <p class="mt-3 text-muted small">© 2025 João Vitor</p>
-    </footer>
 
-    <a href="https://wa.me/5511988188785" 
-       class="contact-float" 
-       title="Fale comigo no WhatsApp" target="_blank" rel="noopener">
+        <p class="footer-copy">© 2025 João Vitor</p>
+    </footer>
+    <!-- ===== FIM DO RODAPÉ ===== -->
+
+
+    <!-- Botão flutuante do WhatsApp (fica sempre visível no canto inferior direito) -->
+    <!-- href=\"https://wa.me/...\": Link que abre o WhatsApp (funciona em mobile e web) -->
+    <!-- class=\"whatsapp-float\": Estilo personalizado que deixa flutuando -->
+    <a href="https://wa.me/5511988188785" class="whatsapp-float" title="Fale no WhatsApp" target="_blank">
         <i class="bi bi-whatsapp"></i>
     </a>
 
+
+    <!-- <script>: Tag que carrega arquivos JavaScript (linguagem que adiciona interatividade) -->
+    <!-- Aqui estamos carregando o JavaScript do Bootstrap que faz o menu mobile e modais funcionarem -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Carregamos nosso arquivo JavaScript personalizado (script.js) que cria efeitos especiais -->
+    <!-- Este arquivo roda depois do HTML e do Bootstrap estarem completamente carregados -->
+    <script src="script.js"></script>
+
 </body>
 </html>
