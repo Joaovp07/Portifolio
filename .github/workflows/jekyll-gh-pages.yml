@@ -1,0 +1,42 @@
+title: Joao Vitor                         # Título do site que será exibido na barra lateral abaixo do avatar
+
+tagline: A text-focused Jekyll theme.  # O texto que será exibido abaixo do título
+
+description: >-                        # Descrição do site usada em SEO e feed
+
+# Coloque o seu site ex: 'https://username.github.io'
+url: 'https://joaovp07.github.io/Portifolio/'
+
+author: Joao Vitor Pires                 # Coloque seu nome
+
+avatar: /assets/img/sample/avatar.jpg   # Coloque seu avatar, lembrando que é preciso colocar a imagem em /assets/img/caminho. Recomenda-se um avatar de aproximadament 400x400
+
+github:
+username: JaoVp7            # Coloque seu usuário do GitHub
+
+twitter:
+username: twitter_username            # Coloque seu usuário do Twitter
+
+social:
+name: your_full_name                  # Coloque seu nome (esta informação irá aparecer no copyright do rodapé)
+email: example@doamin.com             # Coloque seu e-mail
+links:
+    # O primeiro elemento da lista irá ser usado como link para autor no copyright
+    - https://twitter.com/username      # Coloque o link do seu Twitter
+    - https://github.com/username       # Coloque o link do seu GitHub
+    # Descomente e altere os links abaixos se achar necessário
+    # - https://www.facebook.com/username
+    # - https://www.linkedin.com/in/username
+
+# Altere para seu timezone ex: America/Sao_Paulo › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
+timezone: Asia/Shanghai
+
+# Escolhe a configuração de cores utilizando as opções:
+#
+#     light  - Usar tema claro
+#
+#     dark   - Usar tema escuro
+#
+#     dual   - Usa o padrão do sistema e habilita um botão na barra latera para escolher a configuração de cores
+#
+theme_mode: dual
