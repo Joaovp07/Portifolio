@@ -4,7 +4,7 @@ import { Terminal } from '../components/Terminal';
 import { portfolioData } from '../data/portfolioData';
 
 export const About = () => {
-  const { personal, learning } = portfolioData;
+  const { learning } = portfolioData;
 
   return (
     <Section id="about" title="Sobre mim">

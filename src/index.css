@@ -10,7 +10,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+    @apply bg-primary hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
   }
   .btn-outline {
     @apply border border-slate-700 hover:border-slate-500 bg-transparent text-slate-200 font-medium py-2 px-6 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;

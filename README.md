@@ -1,33 +1,43 @@
 # Portfólio João Vitor
 
-Este é o portfólio moderno e responsivo de João Vitor, estudante do ensino médio e apaixonado por programação. O site apresenta habilidades, projetos desenvolvidos e formas de contato.
+Este é o portfólio moderno e responsivo de João Vitor. O site apresenta habilidades, projetos desenvolvidos e formas de contato.
 
 ## Tecnologias Utilizadas
 
 - **HTML5**
-- **CSS3** (com Bootstrap 5)
-- **Bootstrap Icons**
+- **React**
+- **Vite**
+- **Tailwind CSS**
+- **Lucide React**
 - **Responsividade** para desktop e mobile
 
 ## Estrutura
 
-- **Header:** Foto, nome, descrição e habilidades com ícones.
-- **Projetos:** Cards interativos com imagem, descrição e botão para detalhes.
-- **Modais:** Informações extras sobre cada projeto.
-- **Rodapé:** Links para GitHub e e-mail.
+- **Header:** Navegação responsiva e apresentação pessoal.
+- **Projetos:** Cards com descrição, tecnologias e links para o GitHub.
+- **Seções:** Sobre, habilidades, formação, projetos e contato.
 
 ## Como usar
 
 1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Joaovp07/Portifolio.git
+   cd Portifolio
    ```
-   git clone https://github.com/Joaovp07/seu-repositorio.git
+2. Instale as dependências:
+   ```bash
+   npm install
    ```
-2. Abra o arquivo `index.html` em seu navegador.
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
 ## Personalização
 
-- Para adicionar novos projetos, edite o arquivo `index.html` e insira novos cards na seção de projetos.
-- Para alterar estilos, edite o arquivo `style.css`.
+- Para adicionar novos projetos ou atualizar informações, edite `src/data/portfolioData.js`.
+- Para alterar estilos globais, edite `src/index.css`.
+- Para gerar a versão de produção, execute `npm run build`.
 
 ## Contato
 

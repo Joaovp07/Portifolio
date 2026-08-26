@@ -64,7 +64,7 @@ export const Terminal = () => {
           <div key={idx} className="mb-1">
             {line.type === 'input' ? (
               <div className="flex gap-2">
-                <span className="text-blue-500">$</span>
+                <span className="text-red-500">$</span>
                 <span>{line.text}</span>
               </div>
             ) : (
@@ -73,7 +73,7 @@ export const Terminal = () => {
           </div>
         ))}
         <div className="flex gap-2 mt-1">
-          <span className="text-blue-500">$</span>
+          <span className="text-red-500">$</span>
           <input
             type="text"
             value={input}

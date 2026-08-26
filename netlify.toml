@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Essa regra garante que, caso no futuro você adicione múltiplas páginas (React Router), 
+# o Netlify não retorne Erro 404 ao recarregar a página.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

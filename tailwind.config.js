@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#2563EB",
+        primary: "#DC2626", // Red-600
         dark: "#0a0a0a",
         darker: "#050505",
         card: "#121212",
